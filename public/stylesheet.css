@@ -1,3 +1,61 @@
 body {
   background-color: red;
+  height: 100%;
+  width: 100%;
+}
+
+#header {
+  background-color: green;
+  position: fixed;
+  width: 100%;
+}
+
+#title {
+  color: yellow;
+  text-align: center;
+  margin: 20px;
+  font-size: 24px;
+}
+
+#formContainer {
+  display: table;
+  margin: auto;
+  padding: 95px 0;
+}
+
+.searchField {
+  border-radius: 5px 0 0 5px;
+  border: 0;
+}
+
+.btn {
+  color: blue;
+  padding: 1px 12px;
+  vertical-align: top;
+  border-radius: 0 5px 5px 0;
+  border: 0;
+}
+
+.list-group {
+  list-style: none;
+  background-color: yellow;
+  width: 75%;
+  margin: 30px auto;
+}
+
+#avatar {
+  max-width: 20%;
+  margin: 15px;
+}
+
+#name {
+
+}
+
+#following {
+
+}
+
+#followers {
+
 }

@@ -16,25 +16,21 @@
   </head>
 
   <body ng-controller="GitUserSearchController as searchCtrl">
-    <div>
-      <div id="header">
-        <div id="title">
-          GitHub the Gathering
-        </div>
-      </div>
-      <form class="form-horizontal" id="formContainer">
-        <input type="text" ng-model="searchCtrl.searchTerm" ng-change="searchCtrl.doSearch()" ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }">
-        <button class="btn" ng-click="searchCtrl.doSearch()">Search</button>
-      </form>
-      <ul class="list-group" ng-repeat="user in searchCtrl.searchResult.items">
-        <li>
-          <img id="avatar" ng-src="{{user.avatar_url}}">
-          <a ng-href="{{user.html_url}}">{{user.login}}</a>
-          <div>coolness score {{user.score}}</div>
-          <div>cool followers {{searchCtrl.userUrl.followers}}</div>
-          <div>following {{searchCtrl.userUrl.following}}</div>
-        </li>
-      </ul>
+    <div id="header">
+      <div id="title">GitHub: The Gathering</div>
     </div>
+    <form id="formContainer">
+      <input class="searchField" placeholder="  Enter Name" type="text" ng-model="searchCtrl.searchTerm" ng-change="searchCtrl.doSearch()" ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }">
+      <button class="btn" ng-click="searchCtrl.doSearch()">Search</button>
+    </form>
+    <ul class="list-group" ng-repeat="user in searchCtrl.searchResult.items">
+      <li>
+        <img id="avatar" ng-src="{{user.avatar_url}}">
+        <a id="name" ng-href="{{user.html_url}}">{{user.login}}</a>
+        <div id="score">Coolness Score {{user.score}}</div>
+        <div id="followers">Cool Followers {{searchCtrl.userUrl.followers}}</div>
+        <div id="following">Following {{searchCtrl.userUrl.following}}</div>
+      </li>
+    </ul>
   </body>
 </html>
