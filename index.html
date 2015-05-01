@@ -23,14 +23,16 @@
       <input class="searchField" placeholder="  Enter Name" type="text" ng-model="searchCtrl.searchTerm" ng-change="searchCtrl.doSearch()" ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }">
       <button class="btn" ng-click="searchCtrl.doSearch()">Search</button>
     </form>
-    <ul class="list-group" ng-repeat="user in searchCtrl.searchResult.items">
-      <li>
-        <img id="avatar" ng-src="{{user.avatar_url}}">
-        <a id="name" ng-href="{{user.html_url}}">{{user.login}}</a>
-        <div id="score">Coolness Score {{user.score}}</div>
-        <div id="followers">Cool Followers {{searchCtrl.userUrl.followers}}</div>
-        <div id="following">Following {{searchCtrl.userUrl.following}}</div>
-      </li>
-    </ul>
+    <div id="container">
+      <ul class="list-group" ng-repeat="user in searchCtrl.searchResult.items">
+        <li>
+          <img id="avatar" ng-src="{{user.avatar_url}}">
+          <a id="name" ng-href="{{user.html_url}}">{{user.login}}</a>
+          <div id="score">Coolness Score {{user.score}}</div>
+          <div id="followers">Cool Followers {{searchCtrl.userUrl.followers}}</div>
+          <div id="following">Following {{searchCtrl.userUrl.following}}</div>
+        </li>
+      </ul>
+    </div>
   </body>
 </html>
